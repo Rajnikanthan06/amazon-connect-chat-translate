@@ -7,7 +7,7 @@ import './App.css';
 import 'semantic-ui-less/semantic.less';
 import Ccp from './components/ccp';
 
-//import { autoSignIn } from '@aws-amplify/auth';
+import { autoSignIn } from '@aws-amplify/auth';
 Amplify.configure({
   Auth: {
     Cognito: {
@@ -24,7 +24,7 @@ function App({ signOut, user }) {
   
   useEffect(() => {
     configureAuth();
-    //signedIn();
+    signedIn();
   }, []);
 
 
@@ -34,9 +34,9 @@ function App({ signOut, user }) {
   };
 
 
-  //const signedIn = async () => {
-    //await autoSignIn();
-  //};
+  const signedIn = async () => {
+    await autoSignIn();
+  };
 
   return (
     <div className="App">
